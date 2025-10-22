@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urge.elec - Helder PINTO - Électricien à Mauroux (46700) - 15 ans d'expérience</title>
+    <meta name="description" content="Artisan électricien qualifié RGE PV à Mauroux (46). Rénovation, neuf, alarme, chauffage, climatisation, domotique. Devis gratuit - 06 80 81 34 38">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #1a1a1a;
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .logo-section img {
+            width: 120px;
+            height: auto;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .artisan-name {
+            font-size: 1.2rem;
+            margin-top: 0.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        .contact-urgence {
+            background: #1a1a1a;
+            color: #FFD700;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .contact-urgence a {
+            color: #FFD700;
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .contact-urgence a:hover {
+            color: #FFA500;
+        }
+
+        .contact-urgence p {
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-top: 0.5rem;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .zone {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .certifications {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .cert-badge {
+            background: rgba(255, 215, 0, 0.2);
+            border: 2px solid #FFD700;
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .gallery-section {
+            padding: 4rem 0;
+            background: #2c3e50;
+            color: white;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 900px;
+            margin: 2rem auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .carousel-slide {
+            display: none;
+            position: relative;
+        }
+
+        .carousel-slide.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 600px;
+            object-fit: contain;
+            display: block;
+            background: #1a1a1a;
+        }
+
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .carousel-prev, .carousel-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 215, 0, 0.9);
+            color: #1a1a1a;
+            border: none;
+            font-size: 2rem;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .carousel-prev:hover, .carousel-next:hover {
+            background: #FFD700;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-prev {
+            left: 20px;
+        }
+
+        .carousel-next {
+            right: 20px;
+        }
+
+        .carousel-dots {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #FFD700;
+            width: 40px;
+            border-radius: 6px;
+        }
+
+        .services {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, #FFD700, #FFA500);
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #FFD700;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .avantages {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .avantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .avantage-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .avantage-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .avantage-item h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .contact-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+
+        .contact-item a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            color: #FFA500;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #c0392b;
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-urgence a {
+                font-size: 1.4rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .carousel-slide img {
+                height: 300px;
+            }
+
+            .carousel-prev, .carousel-next {
+                padding: 0.5rem 1rem;
+                font-size: 1.5rem;
+            }
+
+            .carousel-prev {
+                left: 10px;
+            }
+
+            .carousel-next {
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="images/logo.png" alt="Logo Urge.elec">
+                    <div>
+                        <h1>Urge.elec</h1>
+                        <p class="artisan-name">Helder PINTO</p>
+                        <p class="tagline">Depuis 15 ans, votre électricien de confiance</p>
+                    </div>
+                </div>
+                <div class="contact-urgence">
+                    <a href="tel:0680813438">06 80 81 34 38</a>
+                    <p>5 jours/7 • 8h-19h non-stop</p>
+                    <span class="badge">DEVIS GRATUIT</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Artisan Électricien Qualifié</h2>
+            <p class="zone">📍 Intervention dans un rayon de 25 km autour de Mauroux (46700)</p>
+            <div class="certifications">
+                <div class="cert-badge">✓ RGE PV</div>
+                <div class="cert-badge">✓ 15 ans d'expérience</div>
+                <div class="cert-badge">✓ Tous travaux</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Nos Réalisations</h2>
+            <div class="carousel-container">
+                <div class="carousel-slide active">
+                    <img src="images/photo1.jpg" alt="Rénovation tableau électrique vétuste - AVANT">
+                    <div class="carousel-caption">Rénovation tableau électrique vétuste - AVANT</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/photo2.jpg" alt="Installation tableau électrique résidentiel - APRÈS">
+                    <div class="carousel-caption">Installation tableau électrique résidentiel - APRÈS</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/photo3.jpg" alt="Éclairage architectural - Église">
+                    <div class="carousel-caption">Éclairage architectural - Église</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/photo4.jpg" alt="Installation tableau électrique neuf">
+                    <div class="carousel-caption">Installation tableau électrique neuf</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/photo5.jpg" alt="Éclairage salle des fêtes">
+                    <div class="carousel-caption">Éclairage salle des fêtes</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/photo6.jpg" alt="Tableau électrique triphasé aux normes">
+                    <div class="carousel-caption">Tableau électrique triphasé aux normes</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/photo7.jpg" alt="Éclairage solaire sur monument communal">
+                    <div class="carousel-caption">Éclairage solaire sur monument communal</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/photo8.jpg" alt="Urge.elec - À votre service">
+                    <div class="carousel-caption">Urge.elec - À votre service</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/photo9.jpg" alt="Pré-câblage tableau électrique">
+                    <div class="carousel-caption">Pré-câblage tableau électrique</div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/photo10.jpg" alt="Bandeau LED lèche-mur">
+                    <div class="carousel-caption">Bandeau LED lèche-mur</div>
+                </div>
+
+                <button class="carousel-prev" onclick="moveSlide(-1)">❮</button>
+                <button class="carousel-next" onclick="moveSlide(1)">❯</button>
+            </div>
+            <div class="carousel-dots">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+                <span class="dot" onclick="currentSlide(7)"></span>
+                <span class="dot" onclick="currentSlide(8)"></span>
+                <span class="dot" onclick="currentSlide(9)"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Nos Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔌</div>
+                    <h3>Rénovation Électrique</h3>
+                    <p>Mise aux normes, remplacement de tableau électrique, rénovation complète de votre installation.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Installation Neuf</h3>
+                    <p>Conception et installation électrique pour constructions neuves et extensions.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚨</div>
+                    <h3>Alarme & Sécurité</h3>
+                    <p>Installation de systèmes d'alarme, vidéosurveillance et contrôle d'accès.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌡️</div>
+                    <h3>Chauffage Électrique</h3>
+                    <p>Installation et maintenance de systèmes de chauffage électrique performants.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">❄️</div>
+                    <h3>Climatisation</h3>
+                    <p>Pose de climatiseurs réversibles pour votre confort été comme hiver.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Domotique</h3>
+                    <p>Maison connectée, automatisation, gestion intelligente de votre habitat.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚿</div>
+                    <h3>Sanitaire</h3>
+                    <p>Installation et dépannage de chauffe-eau et équipements sanitaires électriques.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">☀️</div>
+                    <h3>Photovoltaïque RGE</h3>
+                    <p>Installation de panneaux solaires avec certification RGE pour vos aides financières.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="avantages">
+        <div class="container">
+            <h2 class="section-title">Pourquoi Choisir Urge.elec ?</h2>
+            <div class="avantages-grid">
+                <div class="avantage-item">
+                    <div class="avantage-icon">⚡</div>
+                    <h3>Réactivité</h3>
+                    <p>Disponible 5 jours sur 7 pour répondre à vos urgences électriques</p>
+                </div>
+                <div class="avantage-item">
+                    <div class="avantage-icon">🎓</div>
+                    <h3>Expertise</h3>
+                    <p>15 ans d'expérience et certification RGE PV</p>
+                </div>
+                <div class="avantage-item">
+                    <div class="avantage-icon">💰</div>
+                    <h3>Devis Gratuit</h3>
+                    <p>Estimation transparente et sans engagement</p>
+                </div>
+                <div class="avantage-item">
+                    <div class="avantage-icon">✅</div>
+                    <h3>Qualité</h3>
+                    <p>Travail soigné et conforme aux normes en vigueur</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title" style="color: #1a1a1a;">Contactez-nous</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>📞 Par Téléphone</h3>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <a href="tel:0680813438">06 80 81 34 38</a>
+                    </div>
+                    <p style="margin-top: 1rem; color: #666;">Du lundi au vendredi<br>8h00 - 19h00 non-stop</p>
+                </div>
+                <div class="contact-card">
+                    <h3>✉️ Par Email</h3>
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <a href="mailto:urge.elec@orange.fr">urge.elec@orange.fr</a>
+                    </div>
+                    <p style="margin-top: 1rem; color: #666;">Réponse sous 24h<br>Devis gratuit sur demande</p>
+                </div>
+                <div class="contact-card">
+                    <h3>📍 Zone d'Intervention</h3>
+                    <div class="contact-item">
+                        <span>🗺️</span>
+                        <span>Mauroux (46700)<br>et 25 km alentours</span>
+                    </div>
+                    <p style="margin-top: 1rem; color: #666;">Lot (46)<br>Tarn-et-Garonne (82)</p>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <a href="tel:0680813438" class="cta-button">Appelez-nous maintenant</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p><strong>Urge.elec</strong> - Helder PINTO - Artisan Électricien</p>
+            <p>RGE PV • 15 ans d'expérience • Mauroux (46700)</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">© 2024 Urge.elec - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(index) {
+            if (index >= slides.length) {
+                currentSlideIndex = 0;
+            } else if (index < 0) {
+                currentSlideIndex = slides.length - 1;
+            } else {
+                currentSlideIndex = index;
+            }
+
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            slides[currentSlideIndex].classList.add('active');
+            dots[currentSlideIndex].classList.add('active');
+        }
+
+        function moveSlide(direction) {
+            showSlide(currentSlideIndex + direction);
+        }
+
+        function currentSlide(index) {
+            showSlide(index);
+        }
+
+        // Auto-play carousel every 5 seconds
+        setInterval(() => {
+            moveSlide(1);
+        }, 5000);
+    </script>
+</body>
+</html>
